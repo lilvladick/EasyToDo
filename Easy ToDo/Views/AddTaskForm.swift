@@ -3,11 +3,13 @@ import SwiftData
 
 struct AddTaskForm: View {
     @Environment(\.modelContext) private var modelContext: ModelContext
+    @Environment(\.dismiss) private var dismiss
     
     @State private var taskName = ""
     @State private var taskDescription = ""
     @State private var endDate = Date()
     @State private var priority = false
+    @State private var isComplete = false
     
     var body: some View {
         NavigationStack {
@@ -29,11 +31,32 @@ struct AddTaskForm: View {
             .navigationTitle("Create new task")
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        saveTask()
+                    }, label: {
                         Text("Save")
                     })
                 }
             }
+        }
+    }
+    
+    private func saveTask() {
+        let newTask = Task(
+            name: taskName, 
+            taskDescription: taskDescription,
+            endDate: endDate,
+            isComplete: isComplete
+        )
+        
+        modelContext.insert(newTask)
+        
+        do {
+            try modelContext.save()
+            dismiss()
+        } catch {
+            let nsError = error as NSError
+            print("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
 }

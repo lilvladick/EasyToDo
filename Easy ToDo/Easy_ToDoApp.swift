@@ -15,7 +15,7 @@ struct Easy_ToDoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
+            TaskListView()
         }
         .modelContainer(container)
     }

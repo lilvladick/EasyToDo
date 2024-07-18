@@ -6,6 +6,8 @@ struct TaskListView: View {
     @Query private var tasks: [Task]
     @State private var searchText = ""
     @State private var showSettings = false
+    @State private var showTaskAddings = false
+
     
     var body: some View {
         NavigationStack {
@@ -21,10 +23,13 @@ struct TaskListView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        
+                        showTaskAddings.toggle()
                     }, label: {
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "plus")
                     })
+                    .sheet(isPresented: $showTaskAddings) {
+                        AddTaskForm()
+                    }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
@@ -39,7 +44,6 @@ struct TaskListView: View {
                     }, label: {
                         Image(systemName: "arrow.up.arrow.down")
                     })
-                    
                 }
             }
         }
@@ -64,7 +68,7 @@ struct TaskListView: View {
     let container = try! ModelContainer(for: Task.self)
     let modelContext = container.mainContext
     let tasks = [
-        Task(name: "Go to gym", endDate: Date(), isComplete: false)
+        Task(name: "Go to gym",taskDescription: "domino", endDate: Date(), isComplete: false)
     ]
     
     tasks.forEach { modelContext.insert($0) }

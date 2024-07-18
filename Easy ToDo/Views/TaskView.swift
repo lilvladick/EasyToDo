@@ -1,21 +1,22 @@
 import SwiftUI
 
 struct TaskView: View {
+    @State private var isComplete = false
     let task: Task
     
     var body: some View {
         HStack {
             Button(action: {
-                print("circle")
+                isComplete.toggle()
             }, label: {
-                Image(systemName: "circle")
+                Image(systemName: isComplete ? "checkmark.circle" : "circle").tint(.black)
             })
-            VStack {
-                Text(task.name)
-                Text(task.taskDescription ?? "")
+            VStack(alignment: .leading){
+                Text(task.name).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                Text(task.taskDescription ?? "").font(.footnote)
             }
             Spacer()
-            Text(task.endDate.formattedDate())
+            Text(task.endDate.formattedDate()).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
         }
     }
 }
