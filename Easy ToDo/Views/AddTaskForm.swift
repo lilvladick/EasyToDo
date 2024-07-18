@@ -16,7 +16,7 @@ struct AddTaskForm: View {
             Form {
                 Section("main settings") {
                     TextField("task name", text: $taskName)
-                    DatePicker("Notify date", selection: $endDate, displayedComponents: .date)
+                    DatePicker("Notify date", selection: $endDate, displayedComponents: [.date, .hourAndMinute])
                 }
                 Section("priority ") {
                     Toggle("Set priority to high", isOn: $priority)

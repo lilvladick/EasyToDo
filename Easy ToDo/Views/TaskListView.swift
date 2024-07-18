@@ -7,14 +7,18 @@ struct TaskListView: View {
     @State private var searchText = ""
     @State private var showSettings = false
     @State private var showTaskAddings = false
-
+    @State private var sortType = "By date"
+    
+    let sortOptions = ["Sort by name","Sort by status","Sort by date"]
+    
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(tasks) { task in
-                    //navlink на дедали и редакт
-                    TaskView(task: task)
+                    NavigationLink(destination: DetailTaskView(task: task)) {
+                        TaskView(task: task)
+                    }
                 }
                 .onDelete(perform: deleteTask)
             }
@@ -41,11 +45,15 @@ struct TaskListView: View {
                     })
                 }
                 ToolbarItem(placement: .topBarLeading) {
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "arrow.up.arrow.down")
-                    })
+                    Menu {
+                        Picker("penis", selection: $sortType) {
+                            ForEach(sortOptions, id: \.self) {
+                                Text($0)
+                            }
+                        }.labelsHidden()
+                    } label: {
+                        Image(systemName: "line.horizontal.3.decrease.circle")
+                    }
                 }
             }
         }
