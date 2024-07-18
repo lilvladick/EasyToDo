@@ -4,6 +4,8 @@ import SwiftData
 struct TaskListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var tasks: [Task]
+    @State private var searchText = ""
+    @State private var showSettings = false
     
     var body: some View {
         NavigationStack {
@@ -15,6 +17,7 @@ struct TaskListView: View {
                 .onDelete(perform: deleteTask)
             }
             .navigationTitle("Your tasks")
+            .searchable(text: $searchText) 
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
@@ -25,11 +28,10 @@ struct TaskListView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        
+                        showSettings = true
                     }, label: {
                         Image(systemName: "gearshape")
                     })
-                    
                 }
                 ToolbarItem(placement: .topBarLeading) {
                     Button(action: {
