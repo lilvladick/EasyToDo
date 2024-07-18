@@ -36,6 +36,8 @@ struct TaskListView: View {
                         showSettings = true
                     }, label: {
                         Image(systemName: "gearshape")
+                    }).fullScreenCover(isPresented: $showSettings, content: {
+                        SettingsView()
                     })
                 }
                 ToolbarItem(placement: .topBarLeading) {

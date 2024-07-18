@@ -13,7 +13,8 @@ struct TaskView: View {
             })
             VStack(alignment: .leading){
                 Text(task.name).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Text(task.taskDescription ?? "").font(.footnote)
+                Text(task.taskDescription ?? "")
+                    .font(.footnote).foregroundStyle(.gray).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             }
             Spacer()
             Text(task.endDate.formattedDate()).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(\.dismiss) private var dismiss
     @State private var searchSettings = ""
     @State private var sendNotify = false
     @State private var choosedLang = ""
@@ -26,6 +27,16 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Image(systemName: "chevron.left")
+                        Text("Tasks")
+                    })
+                }
+            }
         }
         .searchable(text: $searchSettings)
     }
