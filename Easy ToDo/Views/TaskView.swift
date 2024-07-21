@@ -1,15 +1,27 @@
 import SwiftUI
 
 struct TaskView: View {
-    @State private var isComplete = false
+    @Environment(\.modelContext) private var modelContext
+    @State private var isComplete: Bool
     let task: Task
+    
+    init(task: Task) {
+        self.task = task
+        _isComplete = State(initialValue: task.isComplete)
+    }
     
     var body: some View {
         HStack {
             Button(action: {
                 isComplete.toggle()
+                task.isComplete = isComplete
+                do {
+                    try modelContext.save()
+               } catch {
+                   print("Error saving context: $$error)")
+               }
             }, label: {
-                Image(systemName: isComplete ? "circle.fill" : "circle").tint(.black)
+                Image(systemName: isComplete ? "circle.inset.filled" : "circle").tint(.black)
             })
             VStack(alignment: .leading){
                 Text(task.name).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)

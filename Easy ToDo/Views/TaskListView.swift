@@ -7,7 +7,7 @@ struct TaskListView: View {
     @State private var searchText = ""
     @State private var showSettings = false
     @State private var showTaskAddings = false
-    @State private var sortOrder: SortOrder = .name
+    @State private var sortOrder: SortOrder = .endDate
     
     var filterTasks: [Task] {
         guard !searchText.isEmpty else { return tasks }
@@ -32,6 +32,11 @@ struct TaskListView: View {
             }
             .navigationTitle("Your tasks")
             .searchable(text: $searchText)
+            .overlay {
+                if filterTasks.isEmpty {
+                    ContentUnavailableView.search(text: searchText)
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
@@ -57,6 +62,7 @@ struct TaskListView: View {
                         Picker("Sort", selection: $sortOrder) {
                             Text("Name").tag(SortOrder.name)
                             Text("Date").tag(SortOrder.endDate)
+                            Text("Completed").tag(SortOrder.isComplete)
                         }.labelsHidden()
                     } label: {
                         Image(systemName: "line.horizontal.3.decrease.circle")
@@ -81,7 +87,7 @@ struct TaskListView: View {
 }
 
 enum SortOrder: String, CaseIterable, Identifiable {
-    case name, endDate
+    case name, endDate, isComplete
 
     var id: String { rawValue }
 
@@ -91,6 +97,12 @@ enum SortOrder: String, CaseIterable, Identifiable {
             return { $0.name < $1.name }
         case .endDate:
             return { $0.endDate < $1.endDate }
+        case .isComplete:
+            return {
+                let lhs = $0.isComplete ? 1 : 0
+                let rhs = $1.isComplete ? 1 : 0
+                return lhs < rhs
+            }
         }
     }
 }
