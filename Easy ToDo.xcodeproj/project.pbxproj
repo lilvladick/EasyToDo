@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E872E5F2C49BB6100B1B92E /* DetailTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E872E5E2C49BB6100B1B92E /* DetailTaskView.swift */; };
 		5E88C1472C4831CA00CDD3D2 /* Easy_ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88C1462C4831CA00CDD3D2 /* Easy_ToDoApp.swift */; };
 		5E88C14D2C4831CC00CDD3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E88C14C2C4831CC00CDD3D2 /* Assets.xcassets */; };
 		5E88C1502C4831CC00CDD3D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E88C14F2C4831CC00CDD3D2 /* Preview Assets.xcassets */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5E872E5E2C49BB6100B1B92E /* DetailTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskView.swift; sourceTree = "<group>"; };
 		5E88C1432C4831CA00CDD3D2 /* Easy ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy ToDo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E88C1462C4831CA00CDD3D2 /* Easy_ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_ToDoApp.swift; sourceTree = "<group>"; };
 		5E88C14C2C4831CC00CDD3D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				5E88C15E2C4837EA00CDD3D2 /* TaskListView.swift */,
 				5E88C1622C4845F500CDD3D2 /* AddTaskForm.swift */,
 				5E88C1642C484D9400CDD3D2 /* SettingsView.swift */,
-				5E872E5E2C49BB6100B1B92E /* DetailTaskView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,7 +172,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E872E5F2C49BB6100B1B92E /* DetailTaskView.swift in Sources */,
 				5E88C1652C484D9400CDD3D2 /* SettingsView.swift in Sources */,
 				5E88C15D2C48352B00CDD3D2 /* TaskModel.swift in Sources */,
 				5E88C1472C4831CA00CDD3D2 /* Easy_ToDoApp.swift in Sources */,

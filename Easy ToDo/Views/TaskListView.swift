@@ -7,23 +7,17 @@ struct TaskListView: View {
     @State private var searchText = ""
     @State private var showSettings = false
     @State private var showTaskAddings = false
-    @State private var sortType = "By date"
-    
-    let sortOptions = ["Sort by name","Sort by status","Sort by date"]
-    
-    
+    @State private var sortOrder: SortOrder = .name
+
     var body: some View {
         NavigationStack {
             List {
-                ForEach(tasks) { task in
-                    NavigationLink(destination: DetailTaskView(task: task)) {
-                        TaskView(task: task)
-                    }
-                }
-                .onDelete(perform: deleteTask)
+                ForEach(tasks.sorted(by: sortOrder.sortDescriptor)) { task in
+                    TaskView(task: task)
+                }.onDelete(perform: deleteTask)
             }
             .navigationTitle("Your tasks")
-            .searchable(text: $searchText) 
+            .searchable(text: $searchText)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
@@ -46,10 +40,9 @@ struct TaskListView: View {
                 }
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
-                        Picker("penis", selection: $sortType) {
-                            ForEach(sortOptions, id: \.self) {
-                                Text($0)
-                            }
+                        Picker("Sort", selection: $sortOrder) {
+                            Text("Name").tag(SortOrder.name)
+                            Text("Date").tag(SortOrder.endDate)
                         }.labelsHidden()
                     } label: {
                         Image(systemName: "line.horizontal.3.decrease.circle")
@@ -58,7 +51,6 @@ struct TaskListView: View {
             }
         }
     }
-    
     func deleteTask(at offset: IndexSet) {
         for index in offset {
             let task = tasks[index]
@@ -74,11 +66,26 @@ struct TaskListView: View {
     }
 }
 
+enum SortOrder: String, CaseIterable, Identifiable {
+    case name, endDate
+
+    var id: String { rawValue }
+
+    var sortDescriptor: (Task, Task) -> Bool {
+        switch self {
+        case .name:
+            return { $0.name < $1.name }
+        case .endDate:
+            return { $0.endDate < $1.endDate }
+        }
+    }
+}
+
 #Preview {
     let container = try! ModelContainer(for: Task.self)
     let modelContext = container.mainContext
     let tasks = [
-        Task(name: "Go to gym",taskDescription: "domino", endDate: Date(), isComplete: false)
+        Task(name: "Go to gym", taskDescription: "domino", endDate: Date(), isComplete: false)
     ]
     
     tasks.forEach { modelContext.insert($0) }

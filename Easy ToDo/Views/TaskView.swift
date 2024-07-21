@@ -9,7 +9,7 @@ struct TaskView: View {
             Button(action: {
                 isComplete.toggle()
             }, label: {
-                Image(systemName: isComplete ? "checkmark.circle" : "circle").tint(.black)
+                Image(systemName: isComplete ? "circle.fill" : "circle").tint(.black)
             })
             VStack(alignment: .leading){
                 Text(task.name).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
