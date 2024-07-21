@@ -8,12 +8,26 @@ struct TaskListView: View {
     @State private var showSettings = false
     @State private var showTaskAddings = false
     @State private var sortOrder: SortOrder = .name
+    
+    var filterTasks: [Task] {
+        guard !searchText.isEmpty else { return tasks }
+        
+        return tasks.filter({$0.name.localizedCaseInsensitiveContains(searchText)})
+    }
 
     var body: some View {
         NavigationStack {
             List {
-                ForEach(tasks.sorted(by: sortOrder.sortDescriptor)) { task in
+                ForEach(filterTasks.sorted(by: sortOrder.sortDescriptor)) { task in
                     TaskView(task: task)
+                        .contextMenu(ContextMenu(menuItems: {
+                            Button(action: {
+                                //edit func
+                            }, label: {
+                                Text("Edit")
+                                Image(systemName: "pencil")
+                            })
+                        }))
                 }.onDelete(perform: deleteTask)
             }
             .navigationTitle("Your tasks")
