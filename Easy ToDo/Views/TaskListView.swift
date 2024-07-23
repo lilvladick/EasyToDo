@@ -16,7 +16,7 @@ struct TaskListView: View {
     }
 
     var body: some View {
-        NavigationStack {
+        NavigationStack() {
             List {
                 ForEach(filterTasks.sorted(by: sortOrder.sortDescriptor)) { task in
                     TaskView(task: task)
@@ -31,6 +31,7 @@ struct TaskListView: View {
                 }.onDelete(perform: deleteTask)
             }
             .navigationTitle("Your tasks")
+            .background(Color.white.edgesIgnoringSafeArea(.all))
             .searchable(text: $searchText)
             .overlay {
                 if filterTasks.isEmpty {
@@ -69,7 +70,7 @@ struct TaskListView: View {
                     }
                 }
             }
-        }
+        }.animation(.default, value: sortOrder)
     }
     func deleteTask(at offset: IndexSet) {
         for index in offset {
@@ -86,26 +87,6 @@ struct TaskListView: View {
     }
 }
 
-enum SortOrder: String, CaseIterable, Identifiable {
-    case name, endDate, isComplete
-
-    var id: String { rawValue }
-
-    var sortDescriptor: (Task, Task) -> Bool {
-        switch self {
-        case .name:
-            return { $0.name < $1.name }
-        case .endDate:
-            return { $0.endDate < $1.endDate }
-        case .isComplete:
-            return {
-                let lhs = $0.isComplete ? 1 : 0
-                let rhs = $1.isComplete ? 1 : 0
-                return lhs < rhs
-            }
-        }
-    }
-}
 
 #Preview {
     let container = try! ModelContainer(for: Task.self)
