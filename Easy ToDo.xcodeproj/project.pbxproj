@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E52F8F72C50689500257850 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52F8F62C50689500257850 /* Notifications.swift */; };
 		5E755CF62C502F05003FE5E8 /* SortParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E755CF52C502F05003FE5E8 /* SortParams.swift */; };
 		5E88C1472C4831CA00CDD3D2 /* Easy_ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88C1462C4831CA00CDD3D2 /* Easy_ToDoApp.swift */; };
 		5E88C14D2C4831CC00CDD3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E88C14C2C4831CC00CDD3D2 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E52F8F62C50689500257850 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		5E755CF52C502F05003FE5E8 /* SortParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortParams.swift; sourceTree = "<group>"; };
 		5E88C1432C4831CA00CDD3D2 /* Easy ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy ToDo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E88C1462C4831CA00CDD3D2 /* Easy_ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_ToDoApp.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				5E88C15C2C48352B00CDD3D2 /* TaskModel.swift */,
 				5E88C1602C483F7A00CDD3D2 /* TaskDateExtension.swift */,
 				5E755CF52C502F05003FE5E8 /* SortParams.swift */,
+				5E52F8F62C50689500257850 /* Notifications.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				5E88C1652C484D9400CDD3D2 /* SettingsView.swift in Sources */,
 				5E88C15D2C48352B00CDD3D2 /* TaskModel.swift in Sources */,
 				5E88C1472C4831CA00CDD3D2 /* Easy_ToDoApp.swift in Sources */,
+				5E52F8F72C50689500257850 /* Notifications.swift in Sources */,
 				5E88C1612C483F7A00CDD3D2 /* TaskDateExtension.swift in Sources */,
 				5E88C15B2C48351200CDD3D2 /* TaskView.swift in Sources */,
 				5E88C1632C4845F500CDD3D2 /* AddTaskForm.swift in Sources */,

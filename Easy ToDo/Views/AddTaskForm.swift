@@ -10,6 +10,7 @@ struct AddTaskForm: View {
     @State private var endDate = Date()
     @State private var priority = false
     @State private var isComplete = false
+    private var notificationManager = NotificationManager()
     
     var body: some View {
         NavigationStack {
@@ -29,6 +30,9 @@ struct AddTaskForm: View {
                 }
             }
             .navigationTitle("Create new task")
+            .onAppear {
+                notificationManager.requestAuthorization()
+            }
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
@@ -50,6 +54,8 @@ struct AddTaskForm: View {
         )
         
         modelContext.insert(newTask)
+        
+        notificationManager.scheduleNotification(for: newTask)
         
         do {
             try modelContext.save()
