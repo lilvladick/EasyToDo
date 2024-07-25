@@ -7,28 +7,36 @@ struct TaskListView: View {
     @State private var searchText = ""
     @State private var showSettings = false
     @State private var showTaskAddings = false
+    @State private var taskToEdit: Task?
     @State private var sortOrder: SortOrder = .endDate
     
     var filterTasks: [Task] {
         guard !searchText.isEmpty else { return tasks }
         
-        return tasks.filter({$0.name.localizedCaseInsensitiveContains(searchText)})
+        return tasks.filter({ $0.name.localizedCaseInsensitiveContains(searchText) })
     }
 
     var body: some View {
-        NavigationStack() {
+        NavigationStack {
             List {
                 ForEach(filterTasks.sorted(by: sortOrder.sortDescriptor)) { task in
                     TaskView(task: task)
-                        .contextMenu(ContextMenu(menuItems: {
-                            Button(action: {
-                                //edit func
-                            }, label: {
-                                Text("Edit")
-                                Image(systemName: "pencil")
-                            })
-                        }))
-                }.onDelete(perform: deleteTask)
+                        .swipeActions {
+                            Button(role: .destructive) {
+                                deleteTask(at: IndexSet(integer: tasks.firstIndex(of: task)!))
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                            .tint(.red)
+                            
+                            Button {
+                                taskToEdit = task
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                            .tint(.blue)
+                        }
+                }
             }
             .navigationTitle("Your tasks")
             .background(Color.white.edgesIgnoringSafeArea(.all))
@@ -42,9 +50,9 @@ struct TaskListView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         showTaskAddings.toggle()
-                    }, label: {
+                    }) {
                         Image(systemName: "plus")
-                    })
+                    }
                     .sheet(isPresented: $showTaskAddings) {
                         AddTaskForm()
                     }
@@ -52,11 +60,12 @@ struct TaskListView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         showSettings = true
-                    }, label: {
+                    }) {
                         Image(systemName: "gearshape")
-                    }).fullScreenCover(isPresented: $showSettings, content: {
+                    }
+                    .fullScreenCover(isPresented: $showSettings) {
                         SettingsView()
-                    })
+                    }
                 }
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
@@ -70,8 +79,13 @@ struct TaskListView: View {
                     }
                 }
             }
-        }.animation(.default, value: sortOrder)
+            .sheet(item: $taskToEdit) { task in
+                TaskEditView(task: task)
+            }
+        }
+        .animation(.default, value: sortOrder)
     }
+
     func deleteTask(at offset: IndexSet) {
         for index in offset {
             let task = tasks[index]
@@ -86,7 +100,6 @@ struct TaskListView: View {
         }
     }
 }
-
 
 #Preview {
     let container = try! ModelContainer(for: Task.self)

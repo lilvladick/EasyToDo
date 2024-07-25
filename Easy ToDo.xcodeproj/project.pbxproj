@@ -18,6 +18,7 @@
 		5E88C1612C483F7A00CDD3D2 /* TaskDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88C1602C483F7A00CDD3D2 /* TaskDateExtension.swift */; };
 		5E88C1632C4845F500CDD3D2 /* AddTaskForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88C1622C4845F500CDD3D2 /* AddTaskForm.swift */; };
 		5E88C1652C484D9400CDD3D2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88C1642C484D9400CDD3D2 /* SettingsView.swift */; };
+		5EA767CC2C5282FA0064DBF5 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA767CB2C5282FA0064DBF5 /* TaskEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +32,11 @@
 		5E88C1522C4831CC00CDD3D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E88C15A2C48351200CDD3D2 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		5E88C15C2C48352B00CDD3D2 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
-		5E88C15E2C4837EA00CDD3D2 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		5E88C15E2C4837EA00CDD3D2 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskListView.swift; path = "Easy ToDo/Views/TaskListView.swift"; sourceTree = SOURCE_ROOT; };
 		5E88C1602C483F7A00CDD3D2 /* TaskDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDateExtension.swift; sourceTree = "<group>"; };
 		5E88C1622C4845F500CDD3D2 /* AddTaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskForm.swift; sourceTree = "<group>"; };
 		5E88C1642C484D9400CDD3D2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5EA767CB2C5282FA0064DBF5 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				5E88C15E2C4837EA00CDD3D2 /* TaskListView.swift */,
 				5E88C1622C4845F500CDD3D2 /* AddTaskForm.swift */,
 				5E88C1642C484D9400CDD3D2 /* SettingsView.swift */,
+				5EA767CB2C5282FA0064DBF5 /* TaskEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				5E88C1632C4845F500CDD3D2 /* AddTaskForm.swift in Sources */,
 				5E88C15F2C4837EA00CDD3D2 /* TaskListView.swift in Sources */,
 				5E755CF62C502F05003FE5E8 /* SortParams.swift in Sources */,
+				5EA767CC2C5282FA0064DBF5 /* TaskEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
