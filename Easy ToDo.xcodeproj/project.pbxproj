@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5E52F8F72C50689500257850 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52F8F62C50689500257850 /* Notifications.swift */; };
 		5E755CF62C502F05003FE5E8 /* SortParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E755CF52C502F05003FE5E8 /* SortParams.swift */; };
+		5E8372622C539D5A00B19E74 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8372612C539D5A00B19E74 /* WidgetKit.framework */; };
+		5E8372642C539D5A00B19E74 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8372632C539D5A00B19E74 /* SwiftUI.framework */; };
+		5E8372672C539D5A00B19E74 /* EasyToDo_widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8372662C539D5A00B19E74 /* EasyToDo_widgetBundle.swift */; };
+		5E8372692C539D5A00B19E74 /* EasyToDo_widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8372682C539D5A00B19E74 /* EasyToDo_widget.swift */; };
+		5E83726B2C539D5E00B19E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E83726A2C539D5E00B19E74 /* Assets.xcassets */; };
+		5E83726F2C539D5E00B19E74 /* EasyToDo-widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5E83725F2C539D5A00B19E74 /* EasyToDo-widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5E88C1472C4831CA00CDD3D2 /* Easy_ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88C1462C4831CA00CDD3D2 /* Easy_ToDoApp.swift */; };
 		5E88C14D2C4831CC00CDD3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E88C14C2C4831CC00CDD3D2 /* Assets.xcassets */; };
 		5E88C1502C4831CC00CDD3D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E88C14F2C4831CC00CDD3D2 /* Preview Assets.xcassets */; };
@@ -21,9 +27,40 @@
 		5EA767CC2C5282FA0064DBF5 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA767CB2C5282FA0064DBF5 /* TaskEditView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5E83726D2C539D5E00B19E74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E88C13B2C4831CA00CDD3D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E83725E2C539D5A00B19E74;
+			remoteInfo = "EasyToDo-widgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E8372702C539D5E00B19E74 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5E83726F2C539D5E00B19E74 /* EasyToDo-widgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5E52F8F62C50689500257850 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		5E755CF52C502F05003FE5E8 /* SortParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortParams.swift; sourceTree = "<group>"; };
+		5E83725F2C539D5A00B19E74 /* EasyToDo-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "EasyToDo-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E8372612C539D5A00B19E74 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5E8372632C539D5A00B19E74 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5E8372662C539D5A00B19E74 /* EasyToDo_widgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyToDo_widgetBundle.swift; sourceTree = "<group>"; };
+		5E8372682C539D5A00B19E74 /* EasyToDo_widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyToDo_widget.swift; sourceTree = "<group>"; };
+		5E83726A2C539D5E00B19E74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E83726C2C539D5E00B19E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E88C1432C4831CA00CDD3D2 /* Easy ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy ToDo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E88C1462C4831CA00CDD3D2 /* Easy_ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_ToDoApp.swift; sourceTree = "<group>"; };
 		5E88C14C2C4831CC00CDD3D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +77,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E83725C2C539D5A00B19E74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E8372642C539D5A00B19E74 /* SwiftUI.framework in Frameworks */,
+				5E8372622C539D5A00B19E74 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E88C1402C4831CA00CDD3D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,10 +96,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E8372602C539D5A00B19E74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E8372612C539D5A00B19E74 /* WidgetKit.framework */,
+				5E8372632C539D5A00B19E74 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E8372652C539D5A00B19E74 /* EasyToDo-widget */ = {
+			isa = PBXGroup;
+			children = (
+				5E8372662C539D5A00B19E74 /* EasyToDo_widgetBundle.swift */,
+				5E8372682C539D5A00B19E74 /* EasyToDo_widget.swift */,
+				5E83726A2C539D5E00B19E74 /* Assets.xcassets */,
+				5E83726C2C539D5E00B19E74 /* Info.plist */,
+			);
+			path = "EasyToDo-widget";
+			sourceTree = "<group>";
+		};
 		5E88C13A2C4831CA00CDD3D2 = {
 			isa = PBXGroup;
 			children = (
 				5E88C1452C4831CA00CDD3D2 /* Easy ToDo */,
+				5E8372652C539D5A00B19E74 /* EasyToDo-widget */,
+				5E8372602C539D5A00B19E74 /* Frameworks */,
 				5E88C1442C4831CA00CDD3D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				5E88C1432C4831CA00CDD3D2 /* Easy ToDo.app */,
+				5E83725F2C539D5A00B19E74 /* EasyToDo-widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +183,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E83725E2C539D5A00B19E74 /* EasyToDo-widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E8372732C539D5E00B19E74 /* Build configuration list for PBXNativeTarget "EasyToDo-widgetExtension" */;
+			buildPhases = (
+				5E83725B2C539D5A00B19E74 /* Sources */,
+				5E83725C2C539D5A00B19E74 /* Frameworks */,
+				5E83725D2C539D5A00B19E74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EasyToDo-widgetExtension";
+			productName = "EasyToDo-widgetExtension";
+			productReference = 5E83725F2C539D5A00B19E74 /* EasyToDo-widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5E88C1422C4831CA00CDD3D2 /* Easy ToDo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E88C1552C4831CC00CDD3D2 /* Build configuration list for PBXNativeTarget "Easy ToDo" */;
@@ -121,10 +207,12 @@
 				5E88C13F2C4831CA00CDD3D2 /* Sources */,
 				5E88C1402C4831CA00CDD3D2 /* Frameworks */,
 				5E88C1412C4831CA00CDD3D2 /* Resources */,
+				5E8372702C539D5E00B19E74 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5E83726E2C539D5E00B19E74 /* PBXTargetDependency */,
 			);
 			name = "Easy ToDo";
 			productName = "Easy ToDo";
@@ -138,9 +226,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					5E83725E2C539D5A00B19E74 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					5E88C1422C4831CA00CDD3D2 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -160,11 +251,20 @@
 			projectRoot = "";
 			targets = (
 				5E88C1422C4831CA00CDD3D2 /* Easy ToDo */,
+				5E83725E2C539D5A00B19E74 /* EasyToDo-widgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E83725D2C539D5A00B19E74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E83726B2C539D5E00B19E74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E88C1412C4831CA00CDD3D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +277,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E83725B2C539D5A00B19E74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E8372672C539D5A00B19E74 /* EasyToDo_widgetBundle.swift in Sources */,
+				5E8372692C539D5A00B19E74 /* EasyToDo_widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E88C13F2C4831CA00CDD3D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,7 +305,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5E83726E2C539D5E00B19E74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E83725E2C539D5A00B19E74 /* EasyToDo-widgetExtension */;
+			targetProxy = 5E83726D2C539D5E00B19E74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5E8372712C539D5E00B19E74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BDHB667Z99;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EasyToDo-widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "EasyToDo-widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Vladislav.Easy-ToDo.EasyToDo-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5E8372722C539D5E00B19E74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BDHB667Z99;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EasyToDo-widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "EasyToDo-widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Vladislav.Easy-ToDo.EasyToDo-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5E88C1532C4831CC00CDD3D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -319,6 +492,7 @@
 		5E88C1562C4831CC00CDD3D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Easy ToDo/Easy_ToDo.entitlements";
@@ -350,6 +524,7 @@
 		5E88C1572C4831CC00CDD3D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Easy ToDo/Easy_ToDo.entitlements";
@@ -381,6 +556,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E8372732C539D5E00B19E74 /* Build configuration list for PBXNativeTarget "EasyToDo-widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E8372712C539D5E00B19E74 /* Debug */,
+				5E8372722C539D5E00B19E74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E88C13E2C4831CA00CDD3D2 /* Build configuration list for PBXProject "Easy ToDo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

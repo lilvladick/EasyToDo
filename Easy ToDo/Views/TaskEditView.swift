@@ -61,6 +61,8 @@ struct TaskEditView: View {
         task.endDate = endDate
         task.isComplete = isComplete
         
+        notificationManager.scheduleNotification(for: task)
+        
         try? modelContext.save()
     }
 }
