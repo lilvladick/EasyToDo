@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 struct AddTaskForm: View {
     @Environment(\.modelContext) private var modelContext: ModelContext
@@ -32,6 +33,7 @@ struct AddTaskForm: View {
             .navigationTitle("Create new task")
             .onAppear {
                 notificationManager.requestAuthorization()
+                WidgetCenter.shared.reloadTimelines(ofKind: "EasyToDo_widget")
             }
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {

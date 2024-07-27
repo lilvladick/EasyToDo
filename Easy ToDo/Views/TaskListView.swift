@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 struct TaskListView: View {
     @Environment(\.modelContext) private var modelContext
@@ -91,6 +92,8 @@ struct TaskListView: View {
             let task = tasks[index]
             modelContext.delete(task)
         }
+        
+        WidgetCenter.shared.reloadTimelines(ofKind: "EasyToDo_widget")
         
         do {
             try modelContext.save()
