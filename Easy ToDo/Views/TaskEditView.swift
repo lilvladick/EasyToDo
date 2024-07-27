@@ -5,6 +5,8 @@ struct TaskEditView: View {
     @Environment(\.modelContext) private var modelContext: ModelContext
     @Environment(\.dismiss) private var dismiss
     
+    @AppStorage("isDarkModeOn") private var isDarkmodeOn = false
+    
     @State var task: Task
     
     @State private var taskName: String
@@ -52,6 +54,7 @@ struct TaskEditView: View {
                     }
                 }
             }
+            .preferredColorScheme(isDarkmodeOn ? .dark : .light)
         }
     }
     

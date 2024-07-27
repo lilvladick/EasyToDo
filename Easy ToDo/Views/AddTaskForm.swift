@@ -5,7 +5,7 @@ import WidgetKit
 struct AddTaskForm: View {
     @Environment(\.modelContext) private var modelContext: ModelContext
     @Environment(\.dismiss) private var dismiss
-    
+    @AppStorage("isDarkModeOn") private var isDarkmodeOn = false
     @State private var taskName = ""
     @State private var taskDescription = ""
     @State private var endDate = Date()
@@ -45,6 +45,7 @@ struct AddTaskForm: View {
                 }
             }
         }
+        .preferredColorScheme(isDarkmodeOn ? .dark : .light)
     }
     
     private func saveTask() {

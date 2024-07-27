@@ -4,6 +4,7 @@ import WidgetKit
 
 struct TaskListView: View {
     @Environment(\.modelContext) private var modelContext
+    @AppStorage("isDarkModeOn") private var isDarkmodeOn = false
     @Query private var tasks: [Task]
     @State private var searchText = ""
     @State private var showSettings = false
@@ -84,6 +85,7 @@ struct TaskListView: View {
                 TaskEditView(task: task)
             }
         }
+        .preferredColorScheme(isDarkmodeOn ? .dark : .light)
         .animation(.default, value: sortOrder)
     }
 
