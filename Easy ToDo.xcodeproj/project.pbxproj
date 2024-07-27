@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E2A87CC2C551E78003A3A63 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2A87CB2C551E78003A3A63 /* DataService.swift */; };
 		5E2A87CD2C551F52003A3A63 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88C15C2C48352B00CDD3D2 /* TaskModel.swift */; };
 		5E2A87CE2C5521D5003A3A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E88C14C2C4831CC00CDD3D2 /* Assets.xcassets */; };
 		5E52F8F72C50689500257850 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52F8F62C50689500257850 /* Notifications.swift */; };
@@ -55,7 +54,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5E2A87CB2C551E78003A3A63 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5E52F8F62C50689500257850 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		5E755CF52C502F05003FE5E8 /* SortParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortParams.swift; sourceTree = "<group>"; };
 		5E83725F2C539D5A00B19E74 /* EasyToDo-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "EasyToDo-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +114,6 @@
 				5E8372682C539D5A00B19E74 /* EasyToDo_widget.swift */,
 				5E83726A2C539D5E00B19E74 /* Assets.xcassets */,
 				5E83726C2C539D5E00B19E74 /* Info.plist */,
-				5E2A87CB2C551E78003A3A63 /* DataService.swift */,
 			);
 			path = "EasyToDo-widget";
 			sourceTree = "<group>";
@@ -287,7 +284,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E2A87CC2C551E78003A3A63 /* DataService.swift in Sources */,
 				5E8372672C539D5A00B19E74 /* EasyToDo_widgetBundle.swift in Sources */,
 				5E2A87CD2C551F52003A3A63 /* TaskModel.swift in Sources */,
 				5E8372692C539D5A00B19E74 /* EasyToDo_widget.swift in Sources */,

@@ -2,14 +2,13 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    let count = DataService()
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), todayTask: count.getTasksCount())
+        SimpleEntry(date: Date())
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), todayTask: count.getTasksCount())
+        let entry = SimpleEntry(date: Date())
         completion(entry)
     }
 
@@ -18,7 +17,7 @@ struct Provider: TimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, todayTask: count.getTasksCount())
+            let entry = SimpleEntry(date: entryDate)
             entries.append(entry)
         }
 
@@ -29,18 +28,15 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let todayTask: Int
 }
 
 struct EasyToDo_widgetEntryView : View {
     var entry: Provider.Entry
-    
-    let count = DataService()
 
     var body: some View {
         VStack(alignment: .leading) {
             Text("Hello").font(.title2).bold()
-            Text("You have " + String(count.getTasksCount()) + " tasks").font(.subheadline)
+            Text("Don't forget about your tasks").font(.subheadline)
         }.foregroundStyle(Color.white)
     }
 }
@@ -66,5 +62,5 @@ struct EasyToDo_widget: Widget {
 #Preview(as: .systemSmall) {
     EasyToDo_widget()
 } timeline: {
-    SimpleEntry(date: .now, todayTask: 8)
+    SimpleEntry(date: .now)
 }
